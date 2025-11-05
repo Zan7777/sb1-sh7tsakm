@@ -49,14 +49,14 @@ const Stats: React.FC = () => {
         });
       }, 30);
 
-      // Animate revenue increase to 88k
+      // Animate revenue increase to 48k
       const revenueInterval = setInterval(() => {
         setRevenueIncrease(prev => {
-          if (prev >= 88000) {
+          if (prev >= 48000) {
             clearInterval(revenueInterval);
-            return 88000;
+            return 48000;
           }
-          return prev + 2500;
+          return prev + 1500;
         });
       }, 25);
     }
@@ -138,7 +138,7 @@ const Stats: React.FC = () => {
 
                     <div className="mb-3">
                       <div className="text-center text-xl font-bold bg-gradient-to-r from-gray-200 via-gray-50 to-gray-300 bg-clip-text text-transparent mb-1.5">
-                        ${(revenueIncrease * 3.2).toLocaleString()}
+                        ${revenueIncrease.toLocaleString()}
                       </div>
                       <div className="h-16 bg-white/5 rounded-sm flex items-end overflow-hidden backdrop-blur-sm">
                         <div className="w-full h-12 bg-gradient-to-t from-gray-300/30 via-gray-100/20 to-transparent rounded-sm animate-pulse"></div>
@@ -156,7 +156,7 @@ const Stats: React.FC = () => {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-neutral-400">Messages</span>
-                        <span className="text-white font-medium">${(revenueIncrease * 0.35).toLocaleString()}</span>
+                        <span className="text-white font-medium">${(revenueIncrease * 0.1).toLocaleString()}</span>
                       </div>
                       <hr className="border-white/20" />
                       <div className="flex justify-between font-bold">
