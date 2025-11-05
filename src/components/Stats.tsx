@@ -49,14 +49,14 @@ const Stats: React.FC = () => {
         });
       }, 30);
 
-      // Animate revenue increase to 45k
+      // Animate revenue increase to 144k
       const revenueInterval = setInterval(() => {
         setRevenueIncrease(prev => {
-          if (prev >= 45000) {
+          if (prev >= 144000) {
             clearInterval(revenueInterval);
-            return 45000;
+            return 144000;
           }
-          return prev + 1500;
+          return prev + 4500;
         });
       }, 25);
     }
@@ -126,7 +126,7 @@ const Stats: React.FC = () => {
 
                 <div className="relative h-[calc(100%-3rem)]">
                   <img
-                    src="https://images.pexels.com/photos/1126993/pexels-photo-1126993.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="https://images.pexels.com/photos/3617457/pexels-photo-3617457.jpeg?auto=compress&cs=tinysrgb&w=800"
                     alt="Professional creator"
                     className="absolute inset-0 w-full h-full object-cover opacity-20"
                   />
