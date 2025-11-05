@@ -13,14 +13,14 @@ const TrustBar: React.FC = () => {
 
   return (
     <div className="border-y border-white/5 bg-black/30 backdrop-blur-sm">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex flex-wrap items-center justify-center gap-6">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-2 md:py-4">
+        <div className="flex flex-wrap items-center justify-center gap-3 md:gap-6">
           {trustItems.map((item, index) => {
             const Icon = item.icon;
             return (
-              <div key={index} className="flex items-center space-x-2 text-neutral-500 hover:text-white transition-colors duration-300">
-                <Icon className="w-3.5 h-3.5 text-neutral-400" />
-                <span className="text-xs font-light whitespace-nowrap tracking-wide">{item.label}</span>
+              <div key={index} className="flex items-center space-x-1.5 md:space-x-2 text-neutral-500 hover:text-white transition-colors duration-300">
+                <Icon className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 text-neutral-400" />
+                <span className="text-[10px] md:text-xs font-light whitespace-nowrap tracking-wide">{item.label}</span>
               </div>
             );
           })}

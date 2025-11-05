@@ -24,42 +24,42 @@ const Process: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
-          <div className="space-y-6">
+    <section className="py-6 md:py-12 relative">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-center">
+          <div className="space-y-3 md:space-y-6">
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
                 <div key={index} className="group">
-                  <div className="flex items-start space-x-4">
+                  <div className="flex items-start space-x-2 md:space-x-4">
                     <div className="flex-shrink-0">
-                      <div className="w-10 h-10 bg-white/5 rounded-sm flex items-center justify-center mb-1.5 group-hover:bg-white/10 transition-all duration-300">
-                        <Icon className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors duration-300" />
+                      <div className="w-7 h-7 md:w-10 md:h-10 bg-white/5 rounded-sm flex items-center justify-center mb-1 md:mb-1.5 group-hover:bg-white/10 transition-all duration-300">
+                        <Icon className="w-3.5 h-3.5 md:w-5 md:h-5 text-neutral-400 group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <div className="text-xs text-neutral-500 font-light uppercase tracking-wider">{step.step}</div>
+                      <div className="text-[10px] md:text-xs text-neutral-500 font-light uppercase tracking-wider">{step.step}</div>
                     </div>
 
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-amber-100 transition-colors duration-300 tracking-tight">
+                      <h3 className="text-sm md:text-lg font-semibold text-white mb-1 md:mb-2 group-hover:text-amber-100 transition-colors duration-300 tracking-tight">
                         {step.title}
                       </h3>
-                      <p className="text-sm text-neutral-500 leading-relaxed group-hover:text-neutral-400 transition-colors duration-300 font-light">
+                      <p className="text-xs md:text-sm text-neutral-500 leading-relaxed group-hover:text-neutral-400 transition-colors duration-300 font-light">
                         {step.description}
                       </p>
                     </div>
                   </div>
 
                   {index < steps.length - 1 && (
-                    <div className="ml-5 mt-3 h-6 w-px bg-white/10"></div>
+                    <div className="ml-3.5 md:ml-5 mt-2 md:mt-3 h-4 md:h-6 w-px bg-white/10"></div>
                   )}
                 </div>
               );
             })}
           </div>
 
-          <div className="relative">
-            <div className="bg-white/[0.03] backdrop-blur-sm rounded-sm p-4 border border-white/10">
+          <div className="relative mt-4 lg:mt-0">
+            <div className="bg-white/[0.03] backdrop-blur-sm rounded-sm p-2 md:p-4 border border-white/10">
               <div className="aspect-[4/3] bg-gradient-to-br from-neutral-900 to-black rounded-sm overflow-hidden relative">
                 <img
                   src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"

@@ -51,33 +51,33 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-12 relative">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-widest mb-3">Services</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+    <section id="services" className="py-6 md:py-12 relative">
+      <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+        <div className="text-center mb-6 md:mb-10">
+          <h2 className="text-[10px] md:text-xs font-medium text-neutral-500 uppercase tracking-widest mb-2 md:mb-3">Services</h2>
+          <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 md:mb-4 tracking-tight">
             Management Excellence
           </h3>
-          <div className="w-16 h-px bg-white/20 mx-auto"></div>
+          <div className="w-12 md:w-16 h-px bg-white/20 mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div
                 key={index}
-                className="group relative bg-white/[0.02] backdrop-blur-sm rounded-sm p-5 border border-white/10 hover:border-white/20 transition-all duration-300"
+                className="group relative bg-white/[0.02] backdrop-blur-sm rounded-sm p-3 md:p-5 border border-white/10 hover:border-white/20 transition-all duration-300"
               >
                 <div className="relative z-10">
-                  <div className="w-10 h-10 bg-white/5 rounded-sm flex items-center justify-center mb-4 group-hover:bg-white/10 transition-all duration-300">
-                    <Icon className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors duration-300" />
+                  <div className="w-7 h-7 md:w-10 md:h-10 bg-white/5 rounded-sm flex items-center justify-center mb-2 md:mb-4 group-hover:bg-white/10 transition-all duration-300">
+                    <Icon className="w-3.5 h-3.5 md:w-5 md:h-5 text-neutral-400 group-hover:text-white transition-colors duration-300" />
                   </div>
 
-                  <h4 className="text-base font-semibold text-white mb-2 group-hover:text-amber-100 transition-colors duration-300 tracking-tight">
+                  <h4 className="text-xs md:text-base font-semibold text-white mb-1 md:mb-2 group-hover:text-amber-100 transition-colors duration-300 tracking-tight">
                     {service.title}
                   </h4>
-                  <p className="text-sm text-neutral-500 leading-relaxed group-hover:text-neutral-400 transition-colors duration-300 font-light">
+                  <p className="text-[11px] md:text-sm text-neutral-500 leading-relaxed group-hover:text-neutral-400 transition-colors duration-300 font-light">
                     {service.description}
                   </p>
                 </div>
