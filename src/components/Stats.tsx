@@ -126,7 +126,7 @@ const Stats: React.FC = () => {
 
                 <div className="relative h-[calc(100%-3rem)]">
                   <img
-                    src="https://images.pexels.com/photos/3775534/pexels-photo-3775534.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="https://images.pexels.com/photos/1126993/pexels-photo-1126993.jpeg?auto=compress&cs=tinysrgb&w=800"
                     alt="Professional creator"
                     className="absolute inset-0 w-full h-full object-cover opacity-20"
                   />
