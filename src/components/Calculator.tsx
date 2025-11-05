@@ -51,8 +51,8 @@ const Calculator: React.FC = () => {
                     onChange={(e) => setSubscribers(Number(e.target.value))}
                     className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
                   />
-                  <div
-                    className="absolute top-0 left-0 h-2 bg-gradient-to-r from-neutral-300 to-neutral-400 rounded-lg pointer-events-none"
+                  <div 
+                    className="absolute top-0 left-0 h-2 bg-gradient-to-r from-pink-500 to-red-500 rounded-lg pointer-events-none"
                     style={{ width: `${(subscribers - 100) / (50000 - 100) * 100}%` }}
                   ></div>
                 </div>
@@ -100,8 +100,8 @@ const Calculator: React.FC = () => {
                       onChange={(e) => setSubscriptionPrice(Number(e.target.value))}
                       className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer slider"
                     />
-                    <div
-                      className="absolute top-0 left-0 h-2 bg-gradient-to-r from-neutral-300 to-neutral-400 rounded-lg pointer-events-none"
+                    <div 
+                      className="absolute top-0 left-0 h-2 bg-gradient-to-r from-pink-500 to-red-500 rounded-lg pointer-events-none"
                       style={{ width: `${(subscriptionPrice - 3) / (50 - 3) * 100}%` }}
                     ></div>
                   </div>
