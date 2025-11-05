@@ -16,11 +16,6 @@ const Hero: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-center">
           <div className="space-y-3 md:space-y-6">
             <div className="space-y-2 md:space-y-3">
-              <div className="inline-flex items-center px-2 py-1 md:px-3 md:py-1.5 bg-amber-500/10 rounded-full border border-amber-500/20 backdrop-blur-sm">
-                <TrendingUp className="w-2.5 h-2.5 md:w-3 md:h-3 text-amber-400 mr-1 md:mr-1.5" />
-                <span className="text-[10px] md:text-xs text-amber-300 font-medium tracking-wide">PREMIUM MANAGEMENT</span>
-              </div>
-
               <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
                 Elevate Your
                 <span className="block bg-gradient-to-r from-amber-200 via-neutral-100 to-amber-200 bg-clip-text text-transparent">
@@ -31,6 +26,11 @@ const Hero: React.FC = () => {
               <p className="text-xs sm:text-sm md:text-base lg:text-lg text-neutral-400 leading-relaxed max-w-xl font-light">
                 Sophisticated management solutions that transform your OnlyFans platform into a refined, revenue-generating enterprise.
               </p>
+
+              <div className="inline-flex items-center px-2 py-1 md:px-3 md:py-1.5 bg-amber-500/10 rounded-full border border-amber-500/20 backdrop-blur-sm">
+                <TrendingUp className="w-2.5 h-2.5 md:w-3 md:h-3 text-amber-400 mr-1 md:mr-1.5" />
+                <span className="text-[10px] md:text-xs text-amber-300 font-medium tracking-wide">PREMIUM MANAGEMENT</span>
+              </div>
             </div>
 
             <div className="flex flex-wrap gap-2 md:gap-3">
