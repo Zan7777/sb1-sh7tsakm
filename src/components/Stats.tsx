@@ -49,14 +49,14 @@ const Stats: React.FC = () => {
         });
       }, 30);
 
-      // Animate revenue increase to 68k
+      // Animate revenue increase to 88k
       const revenueInterval = setInterval(() => {
         setRevenueIncrease(prev => {
-          if (prev >= 68000) {
+          if (prev >= 88000) {
             clearInterval(revenueInterval);
-            return 68000;
+            return 88000;
           }
-          return prev + 2000;
+          return prev + 2500;
         });
       }, 25);
     }
