@@ -27,36 +27,36 @@ const Stats: React.FC = () => {
 
   useEffect(() => {
     if (isVisible) {
-      // Animate time saved to 50%
+      // Animate time saved to 40%
       const timeInterval = setInterval(() => {
         setTimeSaved(prev => {
-          if (prev >= 50) {
+          if (prev >= 40) {
             clearInterval(timeInterval);
-            return 50;
+            return 40;
           }
           return prev + 1;
         });
-      }, 20);
+      }, 25);
 
-      // Animate followers gained to 2M
+      // Animate followers gained to 850K
       const followersInterval = setInterval(() => {
         setFollowersGained(prev => {
-          if (prev >= 2000000) {
+          if (prev >= 850000) {
             clearInterval(followersInterval);
-            return 2000000;
+            return 850000;
           }
-          return prev + 50000;
+          return prev + 25000;
         });
       }, 30);
 
-      // Animate revenue increase to 70k
+      // Animate revenue increase to 45k
       const revenueInterval = setInterval(() => {
         setRevenueIncrease(prev => {
-          if (prev >= 70000) {
+          if (prev >= 45000) {
             clearInterval(revenueInterval);
-            return 70000;
+            return 45000;
           }
-          return prev + 2000;
+          return prev + 1500;
         });
       }, 25);
     }
@@ -65,6 +65,9 @@ const Stats: React.FC = () => {
   const formatFollowers = (num: number) => {
     if (num >= 1000000) {
       return (num / 1000000).toFixed(1) + 'M';
+    }
+    if (num >= 1000) {
+      return (num / 1000).toFixed(0) + 'K';
     }
     return num.toLocaleString();
   };
@@ -77,100 +80,103 @@ const Stats: React.FC = () => {
   };
 
   return (
-    <section ref={sectionRef} className="py-6 md:py-12 relative">
+    <section ref={sectionRef} className="py-4 relative">
       <div className="max-w-6xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-center">
-          <div className="space-y-3 md:space-y-6">
-            <div className="bg-white/[0.03] backdrop-blur-sm rounded-sm p-3 md:p-5 border border-white/10 hover:border-white/20 transition-all duration-300">
-              <div className="flex items-center justify-between">
+        <div className="grid grid-cols-1 gap-3 items-center">
+          <div className="grid grid-cols-2 gap-2">
+            <div className="bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm rounded-sm p-2.5 border border-white/10 hover:border-white/20 hover:scale-105 transition-all duration-300 animate-fadeIn">
+              <div className="flex items-start justify-between mb-1.5">
                 <div>
-                  <h3 className="text-sm md:text-lg font-semibold text-white mb-0.5 md:mb-1 tracking-tight">Time Efficiency</h3>
-                  <p className="text-[10px] md:text-xs text-neutral-500 font-light">Monthly hours saved</p>
+                  <h3 className="text-[11px] font-semibold text-white mb-0.5 tracking-tight">Time Efficiency</h3>
+                  <p className="text-[8px] text-neutral-500 font-light">Monthly hours saved</p>
                 </div>
-                <div className="text-right">
-                  <div className="text-xl md:text-3xl font-bold text-white mb-0.5 md:mb-1">
-                    {timeSaved}%
-                  </div>
-                  <Clock className="w-3.5 h-3.5 md:w-5 md:h-5 text-neutral-500" />
-                </div>
+                <Clock className="w-3.5 h-3.5 text-neutral-500" />
               </div>
-              <div className="mt-2 md:mt-4 h-0.5 md:h-1 bg-white/5 rounded-full overflow-hidden">
+              <div className="text-2xl font-bold bg-gradient-to-r from-gray-200 via-gray-50 to-gray-300 bg-clip-text text-transparent">
+                {timeSaved}%
+              </div>
+              <div className="mt-2 h-0.5 bg-white/5 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-white rounded-full transition-all duration-1000 ease-out"
+                  className="h-full bg-gradient-to-r from-gray-300 via-gray-100 to-gray-400 rounded-full transition-all duration-1000 ease-out"
                   style={{ width: `${timeSaved}%` }}
                 ></div>
               </div>
             </div>
 
-            <div className="bg-white/[0.03] backdrop-blur-sm rounded-sm p-3 md:p-5 border border-white/10 hover:border-white/20 transition-all duration-300">
-              <div className="flex items-center justify-between">
+            <div className="bg-gradient-to-br from-white/[0.05] to-white/[0.02] backdrop-blur-sm rounded-sm p-2.5 border border-white/10 hover:border-white/20 hover:scale-105 transition-all duration-300 animate-fadeIn" style={{ animationDelay: '150ms' }}>
+              <div className="flex items-start justify-between mb-1.5">
                 <div>
-                  <h3 className="text-sm md:text-lg font-semibold text-white mb-0.5 md:mb-1 tracking-tight">Audience Growth</h3>
-                  <p className="text-[10px] md:text-xs text-neutral-500 font-light">New followers acquired</p>
+                  <h3 className="text-[11px] font-semibold text-white mb-0.5 tracking-tight">Audience Growth</h3>
+                  <p className="text-[8px] text-neutral-500 font-light">New followers acquired</p>
                 </div>
-                <div className="text-right">
-                  <div className="text-xl md:text-3xl font-bold text-white mb-0.5 md:mb-1">
-                    {formatFollowers(followersGained)}+
-                  </div>
-                  <Users className="w-3.5 h-3.5 md:w-5 md:h-5 text-neutral-500" />
-                </div>
+                <Users className="w-3.5 h-3.5 text-neutral-500" />
+              </div>
+              <div className="text-2xl font-bold bg-gradient-to-r from-gray-200 via-gray-50 to-gray-300 bg-clip-text text-transparent">
+                {formatFollowers(followersGained)}+
               </div>
             </div>
           </div>
 
-          <div className="relative mt-4 lg:mt-0">
-            <div className="relative mx-auto w-48 h-[380px] md:w-72 md:h-[550px] bg-black rounded-[2rem] md:rounded-[2.5rem] border-2 md:border-4 border-neutral-800 shadow-2xl">
-              <div className="absolute inset-2 md:inset-3 bg-gradient-to-b from-neutral-950 to-black rounded-[1.5rem] md:rounded-[2rem] overflow-hidden">
-                <div className="h-4 md:h-6 bg-black flex items-center justify-center">
-                  <div className="w-8 md:w-12 h-0.5 bg-white/50 rounded-full"></div>
+          <div className="relative mt-3 animate-fadeIn" style={{ animationDelay: '300ms' }}>
+            <div className="relative mx-auto w-full max-w-[280px] h-[320px] bg-black rounded-[1.5rem] border-2 border-neutral-800 shadow-2xl overflow-hidden">
+              <div className="absolute inset-2 bg-gradient-to-b from-neutral-950 to-black rounded-[1.2rem] overflow-hidden">
+                <div className="h-3 bg-black flex items-center justify-center border-b border-white/5">
+                  <div className="w-10 h-0.5 bg-white/50 rounded-full"></div>
                 </div>
 
-                <div className="p-3 md:p-5 text-white">
-                  <div className="text-center mb-3 md:mb-5">
-                    <h4 className="text-xs md:text-base font-bold mb-0.5 md:mb-1 tracking-tight">REVENUE</h4>
-                    <p className="text-[10px] md:text-xs text-neutral-500 uppercase tracking-wider">Statistics</p>
-                  </div>
-                  
-                  <div className="mb-3 md:mb-5">
-                    <div className="text-right text-sm md:text-xl font-bold text-white mb-1 md:mb-2">
-                      ${(revenueIncrease * 3.2).toLocaleString()}
+                <div className="relative h-[calc(100%-3rem)]">
+                  <img
+                    src="https://images.pexels.com/photos/3775534/pexels-photo-3775534.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    alt="Professional creator"
+                    className="absolute inset-0 w-full h-full object-cover opacity-20"
+                  />
+                  <div className="relative p-3 text-white">
+                    <div className="text-center mb-3">
+                      <h4 className="text-[10px] font-bold mb-0.5 tracking-tight">REVENUE</h4>
+                      <p className="text-[8px] text-neutral-500 uppercase tracking-wider">Statistics</p>
                     </div>
-                    <div className="h-12 md:h-20 bg-white/5 rounded-sm flex items-end">
-                      <div className="w-full h-8 md:h-14 bg-gradient-to-t from-white/20 to-transparent rounded-sm"></div>
-                    </div>
-                  </div>
 
-                  <div className="space-y-1 md:space-y-2 text-[10px] md:text-xs">
-                    <div className="flex justify-between">
-                      <span className="text-neutral-500">Subscriptions</span>
-                      <span className="text-white">${(revenueIncrease * 0.7).toLocaleString()}</span>
+                    <div className="mb-3">
+                      <div className="text-center text-xl font-bold bg-gradient-to-r from-gray-200 via-gray-50 to-gray-300 bg-clip-text text-transparent mb-1.5">
+                        ${(revenueIncrease * 3.2).toLocaleString()}
+                      </div>
+                      <div className="h-16 bg-white/5 rounded-sm flex items-end overflow-hidden backdrop-blur-sm">
+                        <div className="w-full h-12 bg-gradient-to-t from-gray-300/30 via-gray-100/20 to-transparent rounded-sm animate-pulse"></div>
+                      </div>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-neutral-500">Tips</span>
-                      <span className="text-white">${(revenueIncrease * 0.2).toLocaleString()}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-neutral-500">Messages</span>
-                      <span className="text-white">${(revenueIncrease * 0.35).toLocaleString()}</span>
-                    </div>
-                    <hr className="border-white/10" />
-                    <div className="flex justify-between font-bold">
-                      <span className="text-white">TOTAL</span>
-                      <span className="text-white">${revenueIncrease.toLocaleString()}</span>
+
+                    <div className="space-y-1.5 text-[9px] bg-black/50 backdrop-blur-sm rounded-sm p-2 border border-white/10">
+                      <div className="flex justify-between">
+                        <span className="text-neutral-400">Subscriptions</span>
+                        <span className="text-white font-medium">${(revenueIncrease * 0.7).toLocaleString()}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-neutral-400">Tips</span>
+                        <span className="text-white font-medium">${(revenueIncrease * 0.2).toLocaleString()}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-neutral-400">Messages</span>
+                        <span className="text-white font-medium">${(revenueIncrease * 0.35).toLocaleString()}</span>
+                      </div>
+                      <hr className="border-white/20" />
+                      <div className="flex justify-between font-bold">
+                        <span className="text-white">TOTAL</span>
+                        <span className="bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">${revenueIncrease.toLocaleString()}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-              
-              <div className="absolute bottom-1 md:bottom-1.5 left-1/2 transform -translate-x-1/2 w-16 md:w-24 h-0.5 bg-white/50 rounded-full"></div>
+
+              <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-20 h-0.5 bg-white/50 rounded-full"></div>
             </div>
 
-            <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-white/[0.05] backdrop-blur-sm rounded-sm p-2 md:p-4 border border-white/10 shadow-2xl">
-              <div className="flex items-center space-x-1.5 md:space-x-2">
-                <TrendingUp className="w-3.5 h-3.5 md:w-5 md:h-5 text-white" />
+            <div className="absolute -bottom-3 -right-2 bg-gradient-to-br from-white/[0.08] to-white/[0.03] backdrop-blur-md rounded-sm p-2 border border-white/20 shadow-2xl animate-pulse">
+              <div className="flex items-center space-x-1.5">
+                <TrendingUp className="w-3.5 h-3.5 text-white" />
                 <div>
-                  <h4 className="text-[9px] md:text-xs font-medium text-neutral-400 uppercase tracking-wider">Peak Growth</h4>
-                  <p className="text-sm md:text-lg font-bold text-white">
+                  <h4 className="text-[8px] font-medium text-neutral-400 uppercase tracking-wider">Peak Growth</h4>
+                  <p className="text-sm font-bold bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent">
                     {formatRevenue(revenueIncrease)}
                   </p>
                 </div>
