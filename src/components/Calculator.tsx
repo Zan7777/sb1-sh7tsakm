@@ -16,35 +16,29 @@ const Calculator: React.FC = () => {
   }, [subscribers, subscriptionPrice, isPaid, multiplier]);
 
   return (
-    <section id="calculator" className="py-20 relative">
+    <section id="calculator" className="py-12 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-pink-500/10 to-red-500/10 rounded-full border border-pink-500/20 backdrop-blur-sm mb-6">
-            <CalcIcon className="w-4 h-4 text-pink-400 mr-2" />
-            <span className="text-sm text-pink-300 font-medium">Earnings Calculator</span>
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center px-3 py-1.5 bg-amber-500/10 rounded-sm border border-amber-500/20 backdrop-blur-sm mb-4">
+            <CalcIcon className="w-3 h-3 text-amber-400 mr-1.5" />
+            <span className="text-xs text-amber-300 font-medium tracking-wide">CALCULATOR</span>
           </div>
-          
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Let's Calculate Your 
-            <span className="block bg-gradient-to-r from-pink-400 to-red-500 bg-clip-text text-transparent">
-              Potential Earnings
-            </span>
+
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+            Revenue Projection
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Calculator Controls */}
-          <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10 shadow-2xl">
-            <h3 className="text-2xl font-bold text-white mb-8">Income Calculator</h3>
-            <p className="text-gray-400 mb-8">Move the sliders to see your potential</p>
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
+          <div className="bg-white/[0.03] backdrop-blur-sm rounded-sm p-6 border border-white/10">
+            <h3 className="text-xl font-bold text-white mb-2 tracking-tight">Income Calculator</h3>
+            <p className="text-sm text-neutral-500 mb-6 font-light">Adjust parameters to estimate potential</p>
 
-            <div className="space-y-8">
-              {/* Subscribers */}
+            <div className="space-y-6">
               <div>
-                <div className="flex justify-between items-center mb-4">
-                  <label className="text-white font-semibold">Subscribers</label>
-                  <span className="text-2xl font-bold text-pink-400">
+                <div className="flex justify-between items-center mb-3">
+                  <label className="text-sm text-neutral-400 font-light">Subscribers</label>
+                  <span className="text-xl font-bold text-white">
                     {subscribers.toLocaleString()}
                   </span>
                 </div>
@@ -64,26 +58,25 @@ const Calculator: React.FC = () => {
                 </div>
               </div>
 
-              {/* Account Type Toggle */}
               <div>
-                <label className="text-white font-semibold mb-4 block">Account Type</label>
-                <div className="flex bg-gray-800 rounded-full p-1">
+                <label className="text-sm text-neutral-400 font-light mb-3 block">Account Type</label>
+                <div className="flex bg-black/50 rounded-sm p-1">
                   <button
                     onClick={() => setIsPaid(true)}
-                    className={`flex-1 py-2 px-4 rounded-full font-semibold transition-all duration-300 ${
+                    className={`flex-1 py-2 px-4 rounded-sm text-sm font-medium transition-all duration-300 ${
                       isPaid
-                        ? 'bg-gradient-to-r from-pink-500 to-red-500 text-white shadow-lg'
-                        : 'text-gray-400 hover:text-white'
+                        ? 'bg-white text-black'
+                        : 'text-neutral-500 hover:text-white'
                     }`}
                   >
                     Paid
                   </button>
                   <button
                     onClick={() => setIsPaid(false)}
-                    className={`flex-1 py-2 px-4 rounded-full font-semibold transition-all duration-300 ${
+                    className={`flex-1 py-2 px-4 rounded-sm text-sm font-medium transition-all duration-300 ${
                       !isPaid
-                        ? 'bg-gradient-to-r from-pink-500 to-red-500 text-white shadow-lg'
-                        : 'text-gray-400 hover:text-white'
+                        ? 'bg-white text-black'
+                        : 'text-neutral-500 hover:text-white'
                     }`}
                   >
                     Free
@@ -94,9 +87,9 @@ const Calculator: React.FC = () => {
               {/* Subscription Price - only show for paid accounts */}
               {isPaid && (
                 <div>
-                  <div className="flex justify-between items-center mb-4">
-                    <label className="text-white font-semibold">Subscription Price</label>
-                    <span className="text-xl font-bold text-pink-400">${subscriptionPrice}</span>
+                  <div className="flex justify-between items-center mb-3">
+                    <label className="text-sm text-neutral-400 font-light">Subscription Price</label>
+                    <span className="text-xl font-bold text-white">${subscriptionPrice}</span>
                   </div>
                   <div className="relative">
                     <input
@@ -117,45 +110,41 @@ const Calculator: React.FC = () => {
             </div>
           </div>
 
-          {/* Results */}
-          <div className="space-y-8">
-            {/* Revenue Display */}
-            <div className="text-center bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg rounded-3xl p-8 border border-white/10">
-              <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-pink-400 to-red-500 bg-clip-text text-transparent mb-4">
+          <div className="space-y-6">
+            <div className="text-center bg-white/[0.03] backdrop-blur-sm rounded-sm p-6 border border-white/10">
+              <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-amber-200 to-neutral-100 bg-clip-text text-transparent mb-2">
                 ${revenue.toLocaleString()}
               </div>
-              <p className="text-gray-300 text-lg">Estimated Monthly Revenue</p>
-              
-              <div className="mt-6 flex items-center justify-center text-pink-400">
-                <TrendingUp className="w-6 h-6 mr-2" />
-                <span className="text-2xl font-bold">{multiplier}x</span>
-                <span className="text-gray-400 ml-2">Revenue Multiplier</span>
+              <p className="text-sm text-neutral-500 uppercase tracking-wider">Monthly Estimate</p>
+
+              <div className="mt-4 flex items-center justify-center text-neutral-400">
+                <TrendingUp className="w-4 h-4 mr-2" />
+                <span className="text-lg font-bold text-white">{multiplier}x</span>
+                <span className="text-xs text-neutral-500 ml-2 uppercase">Multiplier</span>
               </div>
             </div>
 
-            {/* Apply Now Button */}
             <div className="text-center">
-              <button className="px-12 py-4 bg-gradient-to-r from-pink-500 to-red-500 text-white text-xl font-bold rounded-full hover:from-pink-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25">
-                Apply Now
+              <button className="px-10 py-3 bg-white text-black text-sm font-medium rounded-sm hover:bg-neutral-200 transition-all duration-300 tracking-wide">
+                APPLY NOW
               </button>
-              <p className="text-gray-400 mt-4">Start maximizing your earnings today</p>
+              <p className="text-xs text-neutral-500 mt-3 font-light">Start maximizing revenue today</p>
             </div>
 
-            {/* Benefits */}
-            <div className="bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
-              <h4 className="text-xl font-bold text-white mb-4">How You Benefit</h4>
-              <ul className="space-y-3 text-gray-300">
+            <div className="bg-white/[0.02] backdrop-blur-sm rounded-sm p-5 border border-white/10">
+              <h4 className="text-base font-semibold text-white mb-3 tracking-tight">Benefits</h4>
+              <ul className="space-y-2 text-sm text-neutral-400 font-light">
                 <li className="flex items-center">
-                  <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
-                  50% time saved through automation
+                  <div className="w-1 h-1 bg-white rounded-full mr-2"></div>
+                  50% time saved
                 </li>
                 <li className="flex items-center">
-                  <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
-                  2M+ new followers potential
+                  <div className="w-1 h-1 bg-white rounded-full mr-2"></div>
+                  2M+ follower potential
                 </li>
                 <li className="flex items-center">
-                  <div className="w-2 h-2 bg-pink-500 rounded-full mr-3"></div>
-                  Up to $70k monthly increase
+                  <div className="w-1 h-1 bg-white rounded-full mr-2"></div>
+                  $70k monthly growth
                 </li>
               </ul>
             </div>

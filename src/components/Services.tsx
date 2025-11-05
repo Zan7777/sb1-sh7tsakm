@@ -51,49 +51,36 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-20 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-semibold text-pink-400 uppercase tracking-wider mb-4">Services</h2>
-          <h3 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Our OnlyFans
-            <span className="block bg-gradient-to-r from-pink-400 to-red-500 bg-clip-text text-transparent">
-              Management Services
-            </span>
+    <section id="services" className="py-12 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10">
+          <h2 className="text-xs font-medium text-neutral-500 uppercase tracking-widest mb-3">Services</h2>
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+            Management Excellence
           </h3>
-          <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-red-500 mx-auto rounded-full"></div>
+          <div className="w-16 h-px bg-white/20 mx-auto"></div>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <div
                 key={index}
-                className="group relative bg-gradient-to-br from-white/5 to-white/0 backdrop-blur-lg rounded-2xl p-8 border border-white/10 hover:border-pink-500/30 transition-all duration-500 hover:transform hover:scale-105"
+                className="group relative bg-white/[0.02] backdrop-blur-sm rounded-sm p-5 border border-white/10 hover:border-white/20 transition-all duration-300"
               >
-                {/* Gradient overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-pink-500/5 to-red-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
                 <div className="relative z-10">
-                  {/* Icon */}
-                  <div className="w-16 h-16 bg-gradient-to-r from-pink-500/20 to-red-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:from-pink-500/30 group-hover:to-red-500/30 transition-all duration-300">
-                    <Icon className="w-8 h-8 text-pink-400 group-hover:text-pink-300 transition-colors duration-300" />
+                  <div className="w-10 h-10 bg-white/5 rounded-sm flex items-center justify-center mb-4 group-hover:bg-white/10 transition-all duration-300">
+                    <Icon className="w-5 h-5 text-neutral-400 group-hover:text-white transition-colors duration-300" />
                   </div>
 
-                  {/* Content */}
-                  <h4 className="text-xl font-bold text-white mb-4 group-hover:text-pink-100 transition-colors duration-300">
+                  <h4 className="text-base font-semibold text-white mb-2 group-hover:text-amber-100 transition-colors duration-300 tracking-tight">
                     {service.title}
                   </h4>
-                  <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                  <p className="text-sm text-neutral-500 leading-relaxed group-hover:text-neutral-400 transition-colors duration-300 font-light">
                     {service.description}
                   </p>
                 </div>
-
-                {/* Animated border */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-pink-500 to-red-500 opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-sm"></div>
               </div>
             );
           })}
