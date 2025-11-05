@@ -3,11 +3,11 @@ import { ArrowRight, CheckCircle, TrendingUp, DollarSign, Users, Clock, Shield, 
 
 const Hero: React.FC = () => {
   const achievements = [
-    "Aggressive promotion to push past $50k/month",
-    "Tailored campaigns that put your brand in spotlight", 
-    "Full team managing promotion across all channels",
-    "Optimized posts, ads, and campaigns for maximum reach",
-    "Position you in front of the right audience at the right time"
+    "Aggressive promotion past $50k/month",
+    "Tailored campaigns in spotlight",
+    "Full-team channel management",
+    "Optimized campaigns for reach",
+    "Right audience, right time"
   ];
 
   return (
@@ -61,28 +61,43 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="relative mt-4 lg:mt-0">
-            <div className="bg-white/[0.03] backdrop-blur-sm rounded-sm p-4 md:p-6 border border-white/10">
-              <h3 className="text-base md:text-xl font-bold text-white mb-3 md:mb-5 tracking-tight">Our Expertise</h3>
+            <div className="bg-white/[0.03] backdrop-blur-sm rounded-sm p-3 md:p-6 border border-white/10 overflow-hidden group hover:border-white/20 transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/0 to-amber-500/0 group-hover:from-amber-500/5 group-hover:to-transparent transition-all duration-700 opacity-0 group-hover:opacity-100"></div>
 
-              <div className="space-y-2 md:space-y-3">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className="flex items-start space-x-2 md:space-x-3 group">
-                    <div className="flex-shrink-0 w-3 h-3 md:w-4 md:h-4 bg-white rounded-full flex items-center justify-center mt-0.5 md:mt-1">
-                      <CheckCircle className="w-2 h-2 md:w-3 md:h-3 text-black" />
+              <div className="relative z-10">
+                <h3 className="text-sm md:text-xl font-bold text-white mb-2 md:mb-4 tracking-tight flex items-center">
+                  <span className="w-1 h-4 md:h-5 bg-gradient-to-b from-amber-300 to-amber-600 mr-2 rounded-full"></span>
+                  Our Expertise
+                </h3>
+
+                <div className="space-y-1 md:space-y-2">
+                  {achievements.map((achievement, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center space-x-1.5 md:space-x-2 group/item hover:translate-x-1 transition-all duration-300"
+                      style={{
+                        animation: `fadeInLeft 0.5s ease-out ${index * 0.1}s backwards`,
+                      }}
+                    >
+                      <div className="flex-shrink-0 w-2.5 h-2.5 md:w-3.5 md:h-3.5 bg-gradient-to-br from-amber-200 to-amber-400 rounded-full flex items-center justify-center group-hover/item:scale-110 transition-transform duration-300">
+                        <CheckCircle className="w-1.5 h-1.5 md:w-2 md:h-2 text-black" />
+                      </div>
+                      <p className="text-[10px] md:text-sm text-neutral-400 group-hover/item:text-neutral-200 transition-colors duration-300 font-light leading-tight">
+                        {achievement}
+                      </p>
                     </div>
-                    <p className="text-xs md:text-sm text-neutral-400 group-hover:text-neutral-200 transition-colors duration-300 font-light leading-relaxed">
-                      {achievement}
-                    </p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-white/5 text-center">
-                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-amber-200 to-neutral-100 bg-clip-text text-transparent">
-                  $70K+
+                  ))}
                 </div>
-                <div className="text-[10px] md:text-xs text-neutral-500 mt-1 uppercase tracking-wider">
-                  Avg. Revenue Growth
+
+                <div className="mt-3 md:mt-5 pt-3 md:pt-5 border-t border-white/5 text-center relative">
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-500/50 to-transparent"></div>
+
+                  <div className="text-xl md:text-3xl font-bold bg-gradient-to-r from-amber-200 via-amber-100 to-amber-200 bg-clip-text text-transparent animate-pulse">
+                    $70K+
+                  </div>
+                  <div className="text-[9px] md:text-xs text-neutral-500 mt-0.5 md:mt-1 uppercase tracking-widest font-light">
+                    Avg. Revenue Growth
+                  </div>
                 </div>
               </div>
             </div>
